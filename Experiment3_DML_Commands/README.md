@@ -13,157 +13,148 @@ A)Inserting a single record
 ```sql
 INSERT INTO table_name (field_1, field_2, ...) VALUES (value_1, value_2, ...);
 ```
+
 **Syntax (Multiple Rows):**
 ```sql
 INSERT INTO table_name (field_1, field_2, ...) VALUES
 (value_1, value_2, ...),
 (value_3, value_4, ...);
 ```
+
 **Syntax (Insert from another table):**
 ```sql
 INSERT INTO table_name SELECT * FROM other_table WHERE condition;
 ```
+
 ### 2. UPDATE
 Used to modify records in a relation.
 Syntax:
 ```sql
 UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
 ```
+
 ### 3. DELETE
 Used to delete records from a relation.
 **Syntax (All rows):**
 ```sql
 DELETE FROM table_name;
 ```
+
 **Syntax (Specific condition):**
 ```sql
 DELETE FROM table_name WHERE condition;
 ```
+
 ### 4. SELECT
 Used to retrieve records from a table.
 **Syntax:**
 ```sql
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
+
 **Question 1**
 --
--- Paste Question 1 here
+<img width="1037" height="530" alt="image" src="https://github.com/user-attachments/assets/e1017d22-fdd5-4b80-96bb-b52dc644eaf5" />
 
 ```sql
--- Paste your SQL code below for Question 1
+select upper(EmpFname) as EmpName from EmployeeInfo;
 ```
 
 **Output:**
-
-![Output1](output.png)
+image
 
 **Question 2**
 ---
--- Paste Question 2 here
-
+image
 ```sql
--- Paste your SQL code below for Question 2
+select ename,hiredate,strftime('%w',hiredate) as day_of_week from emp where strftime('%w',hiredate) in ('0','6');
 ```
 
 **Output:**
-
-![Output2](output.png)
+image
 
 **Question 3**
 ---
--- Paste Question 3 here
-
+image
 ```sql
--- Paste your SQL code below for Question 3
+select ord_no, purch_amt, (purch_amt/60) as "Achieved %", 100-(purch_amt/60) as "Unachieved %" from orders where "Achieved %" >50;
 ```
 
 **Output:**
-
-![Output3](output.png)
+image
 
 **Question 4**
 ---
--- Paste Question 4 here
-
+image
 ```sql
--- Paste your SQL code below for Question 4
+select *,original_price * discount_percentage as discount_amount from Products where discount_amount>50;
 ```
 
 **Output:**
-
-![Output4](output.png)
+image
 
 **Question 5**
 ---
--- Paste Question 5 here
-
+image
 ```sql
--- Paste your SQL code below for Question 5
+select * from salesman where city!='Paris' and city!='Rome';
 ```
 
 **Output:**
-
-![Output5](output.png)
+image
 
 **Question 6**
 ---
--- Paste Question 6 here
-
+image
 ```sql
--- Paste your SQL code below for Question 6
+alter table Calculations add column base_status;
+update Calculations set base_status='Provided' where base is not null;
+update Calculations set base_status='Not Provided' where base is null;
+select id,base,base_status from Calculations;
 ```
 
 **Output:**
-
-![Output6](output.png)
+image
 
 **Question 7**
 ---
--- Paste Question 7 here
-
+image
 ```sql
--- Paste your SQL code below for Question 7
+delete from Customer where GRADE=2;
 ```
 
 **Output:**
-
-![Output7](output.png)
+image
 
 **Question 8**
 ---
--- Paste Question 8 here
-
+image
 ```sql
--- Paste your SQL code below for Question 8
+delete from Surgeries where surgery_id=3;
 ```
 
 **Output:**
-
-![Output8](output.png)
+image
 
 **Question 9**
 ---
--- Paste Question 9 here
-
+image
 ```sql
--- Paste your SQL code below for Question 9
+update Employees set EMAIL='Unavailable';
 ```
 
 **Output:**
-
-![Output9](output.png)
+image
 
 **Question 10**
 ---
--- Paste Question 10 here
-
+image
 ```sql
--- Paste your SQL code below for Question 10
+update Customer set grade=5 where city='Chennai';
 ```
 
 **Output:**
-
-![Output10](output.png)
+image
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
